@@ -17,6 +17,28 @@
         background-color:rgba(0,0,0,20%);
         }
         .hline { width:100%; height:1.2px; background:#fff; }
+
+        .dropdown {
+  position: relative;
+  display: inline-block;
+   padding:10px;
+   height:20px;
+   width:180px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 145px;
+  background-color:rgba(0, 0, 0, 0.3);;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
     </style>
 </head>
 <body background="http://www.desktopimages.org/pictures/2014/0310/1/orig_4473.jpg">
@@ -28,8 +50,19 @@
     <image src="https://i.ibb.co/jZQZkFt/mylogo.png"></image>
         </th>
             <th align="center">
-                <div style="margin-left:250px;"><font color="white">ELECSQUARE</font></div>
-                <div style="margin-left:500px;"><font color="white" size="3">Concepts Made Easy</font></div>
+                <div style="margin-left:200px;"><font color="white">ELECSQUARE</font></div>
+                <div style="margin-left:480px;"><font color="white" size="3">Concepts Made Easy</font></div>
+            </th>
+            <th>
+                <div class="dropdown" style="margin-left:110px;">
+                    <span style="font-size:18px;border:3px solid Tomato;padding:5px;"><font color="white">Frequent Topics</font></span>
+  <div class="dropdown-content">
+      {% for i in range(0,4) %}
+          <div style="font-size:16px;color:white;padding:10px;">{{frequentlist[i]}}</div>
+      <div class="hline"></div>
+          {% endfor %}
+  </div>
+</div>
             </th>
         </tr>
     </table>
@@ -45,7 +78,7 @@
         <tr>
      <th>
          <input name="Query" placeholder="Enter Your Query" type="text" size="35"></th>
-    <th><image src="https://lh3.googleusercontent.com/sYwSR9uDYdDtkHMpS52BxNLxNdEOMqbxulQkTYE5KXc4hXEAL-1EEWad4ca6wDsKDCI=w412-h220-rw"
+    <th><image src="https://freeiconshop.com/wp-content/uploads/edd/search-var-flat.png"
            style="width:30px;height:30px;">
 
     </image>
@@ -63,7 +96,7 @@
    </th>
         <th>
             <div style="margin-left:10px;">
-                <image src={{image}} style="height:150px;width:180px;"></image>
+                <image src={{image}} style="height:180px;width:180px;"></image>
             </div>
         </th>
     </tr>
@@ -121,7 +154,7 @@
 </div>
 </div>
 <div align="center">
-    <div class="hline"></div>    
+<div class="hline"></div>
 <footer class="nav">
     <div style="font-family:georgia;"><font color="white">Designed with </font><img src="https://cdn.pixabay.com/photo/2017/05/05/09/00/heart-2286378_960_720.png" width="20" height="20">
         <font color="white"> for Engineers Like You</font></div>
